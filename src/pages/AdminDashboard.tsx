@@ -194,7 +194,13 @@ const AdminDashboard = () => {
                   <p className="text-muted-foreground mb-4">
                     Upload your first video to get started
                   </p>
-                  <Button variant="default" onClick={() => document.querySelector('[data-value="upload"]')?.click()}>
+                  <Button 
+                    variant="default" 
+                    onClick={() => {
+                      const uploadTab = document.querySelector('[data-value="upload"]') as HTMLElement;
+                      if (uploadTab) uploadTab.click();
+                    }}
+                  >
                     Upload Video
                   </Button>
                 </div>
